@@ -26,15 +26,16 @@ jobs:
 
       - name: Package with jpackage
         run: |
-          jpackage ^
-            --input build/libs ^
-            --main-jar TicTacToeGame-1.0-all.jar ^
-            --main-class entertainment.fi.tictactoegame.Main ^
-            --name "TicTacToeGame" ^
-            --type exe ^
-            --win-dir-chooser ^
-            --win-menu ^
+          jpackage `
+            --input build/libs `
+            --main-jar TicTacToeGame-1.0-all.jar `
+            --main-class entertainment.fi.tictactoegame.Main `
+            --name "TicTacToeGame" `
+            --type exe `
+            --win-dir-chooser `
+            --win-menu `
             --win-shortcut
+
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
