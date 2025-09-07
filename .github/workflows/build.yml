@@ -28,7 +28,7 @@ jobs:
         run: |
           jpackage `
             --input build/libs `
-            --main-jar TicTacToeGame-1.0-all.jar `
+            --main-jar TicTacToeGame-1.0-SNAPSHOT.jar `
             --main-class entertainment.fi.tictactoegame.Main `
             --name "TicTacToeGame" `
             --type exe `
