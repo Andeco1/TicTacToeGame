@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="entertainment.fi.tictactoegame.controller.GameBoardController"
+      alignment="CENTER" spacing="10"
+      stylesheets="@styles/buttons.css">
+
+    <Label fx:id="statusLabel" text="Игра началась!" styleClass="label-title"/>
+
+    <GridPane fx:id="gameGrid" hgap="5" vgap="5" alignment="CENTER">
+
+    </GridPane>
+
+    <Button text="Закрыть" onAction="#closeWindow" styleClass="button-main"/>
+</VBox>

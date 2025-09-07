@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="entertainment.fi.tictactoegame.controller.GameController"
+      alignment="CENTER" spacing="20"
+      stylesheets="@styles/buttons.css">
+
+  <Label fx:id="statusLabel" text="TicTacToe" styleClass="label-title"/>
+  <Button text="Новая игра" onAction="#startNewGame"  styleClass="button-main"/>
+  <Button text="Настройки" onAction="#openSettings"  styleClass="button-main"/>
+  <Button text="История игр" onAction="#show"  styleClass="button-main"/>
+  <Text text="FI entertainment©"/>
+</VBox>

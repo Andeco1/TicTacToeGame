@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="entertainment.fi.tictactoegame.controller.SettingsController"
+      alignment="CENTER" spacing="15"
+      stylesheets="@styles/buttons.css">
+
+    <Label text="Режим игры" styleClass="label-title"/>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #eef2f5; -fx-padding: 10; -fx-background-radius: 10;">
+    <RadioButton text="Человек vs Человек" fx:id="humanMode"  styleClass="button-main"/>
+        <RadioButton text="Человек vs Компьютер" fx:id="aiMode"  styleClass="button-main"/>
+    </HBox>
+
+    <Label text="Сложность" styleClass="label-title"/>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #eef2f5; -fx-padding: 10; -fx-background-radius: 10;">
+    <RadioButton text="Легкий" fx:id="easy"  styleClass="button-main"/>
+        <RadioButton text="Средний" fx:id="medium"  styleClass="button-main"/>
+        <RadioButton text="Сложный" fx:id="hard"  styleClass="button-main"/>
+    </HBox>
+
+    <Button text="Сохранить" onAction="#saveSettings"  styleClass="button-main"/>
+</VBox>

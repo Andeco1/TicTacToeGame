@@ -1,0 +1,58 @@
+.label-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", "Tahoma", sans-serif;
+    -fx-text-fill: #333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 1, 1);
+}
+
+.button-cell {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", "Tahoma", sans-serif;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 3px;
+    -fx-border-color: #555;
+    -fx-text-fill: #333;
+    -fx-background-insets: 0;
+    -fx-padding: 14 0 14 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 2, 2);
+    -fx-background-color: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    -fx-transition: all 0.3s ease;
+}
+
+.button-cell:hover {
+    -fx-background-color: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 10, 0, 4, 4);
+}
+
+.button-cell:pressed {
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+    -fx-background-color: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+}
+
+.button-main {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", "Tahoma", sans-serif;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 12 25 12 25;
+    -fx-cursor: hand;
+    -fx-background-color: linear-gradient(to right, #ff7e5f, #feb47b);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 3, 3);
+    -fx-transition: all 1s ease;
+    -fx-letter-spacing: 2px;
+}
+
+.button-main:hover {
+    -fx-background-color: linear-gradient(to right, #ff7e5f, #2575fc);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 12, 0, 5, 5);
+}
