@@ -1,0 +1,42 @@
+name: Build Windows Installer
+
+on:
+  push:
+    tags:
+      - 'v*'   # Запускать только на релизах (например, v1.0.0)
+  workflow_dispatch:  # Можно запустить вручную из GitHub UI
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build with Gradle
+        run: ./gradlew clean build
+
+      - name: Package with jpackage
+        run: |
+          jpackage ^
+            --input build/libs ^
+            --main-jar TicTacToeGame-1.0-all.jar ^
+            --main-class entertainment.fi.tictactoegame.Main ^
+            --name "TicTacToeGame" ^
+            --type exe ^
+            --win-dir-chooser ^
+            --win-menu ^
+            --win-shortcut
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TicTacToeGame-installer
+          path: TicTacToeGame-1.0.exe
