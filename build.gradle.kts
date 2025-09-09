@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "entertainment.FI"
-version = "1.0-SNAPSHOT"
+version = "1"
 
 repositories {
     mavenCentral()
@@ -50,9 +50,26 @@ tasks.withType<Test> {
 }
 
 jlink {
-    imageZip.set(layout.buildDirectory.file("/distributions/app-${javafx.platform.classifier}.zip"))
+    imageZip.set(file("/Users/yan/MIREA/Testing/TicTacToeGame/build/jlink-image.zip")) // опционально, архив runtime-image
     options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
+
     launcher {
-        name = "app"
+        name = "TicTacToeGame"
+    }
+
+    jpackage {
+        installerType = when {
+            org.gradle.internal.os.OperatingSystem.current().isWindows -> "exe"
+            org.gradle.internal.os.OperatingSystem.current().isMacOsX -> "dmg"
+            else -> "pkg"
+        }
+        installerOptions.addAll(
+            listOf(
+                "--app-version", project.version.toString(),
+                "--vendor", "Yan Vasylchenko",
+                "--name", "TicTacToeGame",
+                "--icon", "src/main/resources/img.png" // для macOS, для Windows можно .ico
+            )
+        )
     }
 }
